@@ -1,0 +1,17 @@
+<?xml version="1.0"?><svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <title>post it note</title>
+ <defs>
+  <linearGradient id="linearGradient3164">
+   <stop stop-color="#c8c800" offset="0" id="stop3166"/>
+   <stop stop-color="#ffff49" offset="1" id="stop3168"/>
+  </linearGradient>
+  <linearGradient gradientTransform="matrix(0.9913899,-0.1309431,0.1309431,0.9913899,-65.848112,49.984526)" xlink:href="#linearGradient3164" id="linearGradient3206" y2="0.084927" x2="0.142763" y1="0.084927" x1="0.120812"/>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <g opacity="0.6" id="layer1">
+   <path fill="#000000" fill-opacity="0.392157" fill-rule="nonzero" stroke-width="2" stroke-miterlimit="4" id="path3162" d="m15.266014,67.6297c50.973404,-19.827728 134.539803,-30.11438 134.539803,-30.11438l238.094666,-31.447601l25.594971,193.783447c0,0 13.674561,113.147186 46.846375,167.184784c-77.612549,32.186401 -215.034851,52.193665 -215.034851,52.193665l-193.78347,25.594971l-43.782745,-331.485901c0,0 -6.979179,-26.445313 7.525253,-45.708984z"/>
+   <path fill="url(#linearGradient3206)" fill-rule="nonzero" stroke="#000000" stroke-width="2" stroke-miterlimit="4" id="rect2385" d="m7.837448,60.561981c58.473396,-16.827728 137.03981,-27.11438 137.03981,-27.11438l238.094666,-31.447601l25.59494,193.783447c0,0 8.767273,75.993164 41.939087,130.030823c-63.192383,76.137878 -210.127563,89.347595 -210.127563,89.347595l-193.78344,25.594971l-43.782753,-331.485901c0,0 -3.796051,-31.873474 5.025253,-48.708954z"/>
+  </g>
+ </g>
+</svg>

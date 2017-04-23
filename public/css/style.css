@@ -1,0 +1,262 @@
+html {
+    margin: 0;
+    padding: 0;    
+}
+body {
+    font-size: 12px;
+    font-family: Verdana, Arial;
+    margin: 0;
+    padding: 0;
+    background-image: url('/images/140015.jpg');
+}
+
+.draggable { 
+    min-width: 90px;
+    height: 80px;
+    padding: 10px;
+    margin: 0 10px 10px 0;
+    position: absolute;
+    cursor: move;
+    background:#ffc;
+    border-radius: 5px;
+    /* Firefox */
+    -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+    /* Safari+Chrome */
+    -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    /* Opera */
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    border: 1px solid rgb(218, 196, 148);
+}
+
+.topRight {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.topRight .autosave {
+    opacity: 0.1;
+}
+
+.topRight .action {
+    opacity: 0.1;
+    color: red;
+}
+
+.topRight .action:hover {
+    opacity: 1.0;
+}
+
+.topRight .fa {
+    margin-left: 5px;
+}
+
+.notes {
+    position: relative;
+}
+
+.draggable h3 {
+    margin: 0;
+}
+
+.draggable form { 
+    height: 100%;
+}
+
+.statusMessage {
+    position: absolute;
+    left: 10px;
+    bottom: 6px;
+    color: red;
+    display: block;
+}
+
+#newNote {
+    position: fixed;
+    right: 0px;
+    bottom: 0px;
+    width: 200px;
+    height: 30px;
+    background-color: orange;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+#newNote:hover {
+    background-color: red;
+}
+
+
+.context {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  resize: none;
+/*  white-space: pre; */
+  cursor: text;
+/*  padding: 10px; */
+  -ms-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.context:focus {
+    outline: none !important;
+}
+
+#fullscreenDragOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    z-index: -1000;
+    display: none;
+}
+
+#styleActions {
+    position: absolute;
+    top: 30px;
+    background: #F9F9F9;
+}
+
+#styleActions a {
+    display: block;
+}
+
+#styleActions a:link {text-decoration:none;}
+#styleActions a:visited {text-decoration:none;}
+#styleActions a:hover {text-decoration:none;}
+#styleActions a:active {text-decoration:none;}
+#styleActions a{
+  color:black;
+  padding:2px;
+  width:1em;
+}
+
+#tabButtons a i {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 7px;
+    right: 3px;
+    display: none;
+}
+
+#tabButtons a:hover i {
+    display: block;
+}
+
+#tabButtons a:hover i:hover {
+    color: red;
+}
+
+
+#tabButtons a {
+    position: relative;
+}
+
+
+/*------------------------------------*\
+    Simple HTML5 data-tabs
+\*------------------------------------*/
+
+.tab {
+    float:left;
+    display:block;
+    padding:5px 20px;
+    text-decoration:none;
+    border-radius:5px 5px 0 0;
+    background:#F9F9F9;
+    color:#777;
+}
+
+.tab.add {
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.tab.active,
+.tab:hover {
+    background:#DDD;
+    color:#222;
+}
+.notes {
+    display:none;
+}
+.notes.active {
+    display:block;
+}
+
+.button {
+    float:left;
+    display:block;
+    padding:5px 20px;
+    text-decoration:none;
+    background:#F9F9F9;
+    color:#777;
+}
+
+.button:hover {
+    background: orange;
+}
+
+#newActions a:first-of-type {
+    margin-left: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#newActions a:last-of-type {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Progressbar style */
+
+.progress {
+  overflow: hidden;
+  height: 10px;
+}
+
+.progress-val {
+  float: right;
+  margin-left: 15px;
+  font: bold 15px/34px Helvetica, Arial, sans-serif;
+  color: #333;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.progress-bar {
+  display: block;
+  overflow: hidden;
+  height: 8px;
+  background: #b8b8b8;
+  border-radius: 4px;
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2), transparent 60%);
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.2), transparent 60%);
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.2), transparent 60%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), transparent 60%);
+  -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), 0 1px rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), 0 1px rgba(255, 255, 255, 0.6);
+}
+
+.progress-in {
+  display: block;
+  min-width: 8px;
+  height: 8px;
+  background: #1997e6;
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 60%, rgba(0, 0, 0, 0) 61%, rgba(0, 0, 0, 0.2)), -webkit-linear-gradient(left, #147cd6, #24c1fc);
+  background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 60%, rgba(0, 0, 0, 0) 61%, rgba(0, 0, 0, 0.2)), -moz-linear-gradient(left, #147cd6, #24c1fc);
+  background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 60%, rgba(0, 0, 0, 0) 61%, rgba(0, 0, 0, 0.2)), -o-linear-gradient(left, #147cd6, #24c1fc);
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0) 60%, rgba(0, 0, 0, 0) 61%, rgba(0, 0, 0, 0.2)), linear-gradient(to right, #147cd6, #24c1fc);
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(0, 0, 0, 0.2);
+}
+
