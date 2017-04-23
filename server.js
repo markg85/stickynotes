@@ -10,16 +10,31 @@ var cookieParser = require('cookie-parser');
 global.MemoryStore = new session.MemoryStore();
 global.io = require('socket.io')(server);
 global.app = app;
+global.sendClientDBConnected = false;
 
 server.listen(3000);
 
 // Database connection
 var db = mongoose.connection;
 db.on('error', function(errorObject){
-    console.log("DB Error: " + errorObject)
+  global.io.of('/sn').emit('ServerDBError', { message: errorObject });
+  // Inform the client when the connection is open again
+  global.sendClientDBConnected = true;
+  console.log("DB Error: " + errorObject)
 });
-db.once('open', function callback () {
-  console.log("database connection is open!")
+
+db.on('close', function(){
+  global.io.of('/sn').emit('ServerDBClose', { message: "The server side connection to the database has been closed." });
+  global.sendClientDBConnected = true;
+  console.log("Database connection is closed!")
+});
+
+db.on('open', function callback () {
+  if (global.sendClientDBConnected == true) {
+    global.sendClientDBConnected = false;
+    global.io.of('/sn').emit('ServerDBOpen', { message: "The server side is connected to the database again." });
+  }
+  console.log("Database connection is open!")
 });
 
 mongoose.connect('mongodb://localhost/sc');

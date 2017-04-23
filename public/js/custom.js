@@ -181,6 +181,19 @@ $(document).ready(function(){
     var socket = io.connect('/sn', {
         query: 'session_id=' + getCookie('connect.sid')
     });
+
+    socket.on('ServerDBError', function (data) {
+        console.log(data)
+    });
+
+    socket.on('ServerDBClose', function (data) {
+        console.log(data)
+    });
+
+    socket.on('ServerDBOpen', function (data) {
+        console.log(data)
+    });
+
     socket.on('NewStickyNote', function (data) {
         addNoteToDom(data.note);
     });
