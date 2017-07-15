@@ -12,7 +12,7 @@ global.io = require('socket.io')(server);
 global.app = app;
 global.sendClientDBConnected = false;
 
-server.listen(3000);
+server.listen(80);
 
 // Database connection
 var db = mongoose.connection;
@@ -37,7 +37,7 @@ db.on('open', function callback () {
   console.log("Database connection is open!")
 });
 
-mongoose.connect('mongodb://localhost/sc');
+mongoose.connect('mongodb://mongo/sc');
 
 app.use(session({
     store: global.MemoryStore,
